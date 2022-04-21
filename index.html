@@ -14,9 +14,26 @@
                 return false;
             }
 
+            function notflower() {
+                alert('Букет из 27 бутонов');
+                return false;
+            }
+
+            function notf() {
+                alert('Розы 101 шт');
+                return false;
+            }
+
+            function notfl() {
+                alert('Лилии пятнистые');
+                return false;
+            }
+
+
             function search() {
                 let name = document.getElementById('search').value;
                 let productNumder = null;
+
                 if (name == 'пионы') {
                     productNumder = 0;
                 } else if (name == 'розы') {
@@ -27,7 +44,19 @@
                     alert('Товар не найден');
                 }
                 let cards = document.getElementsByClassName('card');
+                if (name == '') {
+                    cards[0].style.display = "inline-block";
+                    cards[1].style.display = "inline-block";
+                    cards[2].style.display = "inline-block";
+                }
+                else {
+                    cards[0].style.display = "none";
+                    cards[1].style.display = "none";
+                    cards[2].style.display = "none";
+                }
+
             let card = cards[productNumder];
+            card.style.display = "inline-block"
             card.style.border = '1px dashed white';
             card.style.backgroundColor = 'pink';
 
@@ -70,8 +99,10 @@
 
     <main>
         <div class="card">
-            <a href="product1.html">
-                <div class="image"><img src="flowers.jpg"></div>
+            <a href="product1.html" onclick="return notflower()">
+                <div class="image"><img src="flowers.jpg"
+                onmouseout="this.src='flowers.jpg'"
+                onmouseover="this.src='11.jpg'"></div>
                 <div class="product-name">Пионы</div>
                 <div class="price">2000 &#8381;</div>
             </a>
@@ -80,8 +111,10 @@
         </div>
 
         <div class="card">
-            <a href="product1.html">
-                <div class="image"><img src="Rose.jpg"></div>
+            <a href="product1.html" onclick="return notf()">
+                <div class="image"><img src="розы1.jpg"
+                    onmouseout="this.src='розы1.jpg'"
+                    onmouseover="this.src='розы2.jpg'"></div>
                 <div class="product-name">Розы</div>
                 <div class="price">1500 &#8381;</div>
             </a>
@@ -90,8 +123,10 @@
         </div>
 
         <div class="card">
-            <a href="product1.html">
-                <div class="image"><img src="lilii.jpg"></div>
+            <a href="product1.html" onclick="return notfl()">
+                <div class="image"><img src="lilii.jpg"
+                    onmouseout="this.src='lilii.jpg'"
+                    onmouseover="this.src='ли1.jpg'"></div>
                 <div class="product-name">Лилии</div>
                 <div class="price">1500 &#8381;</div>
             </a>
